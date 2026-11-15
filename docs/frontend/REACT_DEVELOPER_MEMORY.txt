@@ -1,0 +1,28 @@
+﻿[01] CONTEXTO
+React y TypeScript en frontend/, Vite, Three.js; versiones declaradas en frontend/package.json. Estilos CSS convencionales. No existe memoria arquitectónica ni plan React específico en docs/frontend al 2026-11-15; plan general en docs/codex/PLAN_PRIMERA_HISTORIA.md.
+[02] IMPLEMENTACIÓN
+Una pantalla de exploración: globo, detalle, fuentes y cronología. Redistribución visual implementada, pendiente revisión visual y accesibilidad real; no marcar completa.
+[03] COMPONENTES
+App.tsx contiene pantalla y selección; Globe.tsx recibe coordinates y place; responsabilidad del globo coordinada por otro agente.
+[04] NAVEGACIÓN
+Pantalla única, sin router. Botones de cronología y anterior/siguiente.
+[05] DJANGO
+GET /api/stories/expansion-de-roma/ por proxy Vite; sin autenticación. Contrato conceptual en docs/api/CONTRATO_HISTORIA_PROPUESTO.md; no se encontró OpenAPI.
+[06] ESTADO
+Carga, error y selección en estado local; sin caché global.
+[07] HISTORIAL
+2026-11-15: App.tsx, App.css e index.css priorizan globo; build exitoso y lint sin errores, con advertencia en Globe.tsx. Commit base 2c7534a, cambios locales sin confirmar.
+[08] RIESGOS
+Sin QA visual o teclado real confirmado en esta entrega; módulo del globo excede aviso de tamaño de Vite. Fuentes históricas siguen en revisión.
+[09] PRÓXIMOS PASOS
+QA visual, móvil, teclado, fallo de WebGL y fuentes abiertas; contrastar hechos y ubicar solo evidencias verificadas.
+[10] VIGENCIA
+2026-11-15; commit 2c7534a; se revisaron archivos frontend afectados y contrato propuesto. No hay pruebas de componentes configuradas en package.json.
+
+2026-11-15 — rediseño visual de referencia: `frontend/src/App.css` e `index.css` usan paleta oscura, borde dorado, panel y cronología sobre un mapa principal; se conserva `App.tsx` y el contrato del globo. `npm run build` pasó con aviso del módulo 3D de 611,60 kB; `npm run lint` pasó con advertencia previa `react/set-state-in-effect` en Globe.tsx. QA visual integrado en curso; no hay evidencia aún de lector de pantalla o prueba táctil física.
+
+2026-11-15 — Enfoque geopolítico: App.tsx consume GET /api/stories/geopolitica/ y separa hechos y análisis; muestra categoría, icono, fecha del acontecimiento, publicación y corte, fuentes y resumen de instantánea. Globe.tsx muestra icono de categoría y conserva punto aproximado; index.html e interfaz adaptados. La ruta de Roma anterior queda fuera de la pantalla pero se mantiene en backend según coordinación. `npm run build` y `npm run lint` finalizaron sin errores; Vite advierte por módulo 3D >500 kB y lint conserva una advertencia sobre set-state-in-effect. No se ha validado visualmente ni con lector de pantalla la integración actual; la API y datos dependen de entrega backend. Base Git con cambios locales preexistentes.
+
+2026-11-15 — Se añadieron detalles accesibles opcionales para afirmaciones con fuentes/localizadores, actores con papeles y efectos con perspectiva y valoración. Las declaraciones atribuidas y análisis se muestran en bloques distintos; si no hay efectos se indica ausencia de evidencia. Los enlaces internos permiten abrir la afirmación vinculada. Contrato confirmado con orquestación y serializer. `npm run build` y `npm run lint` pasaron; persisten avisos conocidos de bundle y set-state-in-effect. Pendiente comprobación integrada en navegador y lector de pantalla.
+
+2026-11-15 — Interfaz de múltiples noticias y línea de tiempo: `frontend/src/App.tsx` incorpora selector de noticia siempre disponible, consulta GET `/api/stories/conflicto-armado/` o `/api/stories/geopolitica/` según selección, conserva cancelación, carga y error y permite seleccionar hitos, que actualizan globo y fuentes. Categorías `conflicto`, `acuerdo` y `negociacion` tienen símbolos con leyenda que explica que no son posiciones ni rutas militares. `App.css` adapta selector y línea de tiempo a móvil. `npm run build` y `npm run lint` finalizaron correctamente con avisos previos de bundle 3D y `react/set-state-in-effect`. Se acordó el contrato con backend, pero aún no se ha probado la integración real ni navegación en navegador o lector de pantalla en esta entrega. Estado IMPLEMENTED, pendiente integración y QA. Existe una ejecución fallida de `npm run build` desde la raíz del repositorio por no haber package.json allí; fue corregida ejecutando desde `frontend/`.

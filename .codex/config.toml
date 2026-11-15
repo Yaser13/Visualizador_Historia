@@ -1,0 +1,7 @@
+# Configuracion de proyecto; no cambia modelos ni permisos del usuario.
+[agents]
+max_threads = 3
+
+# Activa el mecanismo estable de agentes personalizados de esta version de Codex.
+[features]
+multi_agent_v2 = true

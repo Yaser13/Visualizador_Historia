@@ -1,0 +1,11 @@
+﻿[01] IDENTIDAD: Observatorio geopolítico. Python 3.12.13, Django 6.1.3; SQLite local; fuente: backend/config/settings.py y entorno.
+[02] ARQUITECTURA: app stories disponible pero no registrada en INSTALLED_APPS al momento de inspección; vistas JSON de lectura, sin DRF verificado.
+[03] MODELOS: `stories/models.py` vacío al inspeccionar; no se verificó DB de noticias. GEO-DB-01 propone relaciones, no las implementa.
+[04] API: `/api/stories/geopolitica/` y `/api/stories/expansion-de-roma/` devuelven diccionarios estáticos, segun views.py.
+[05] SEGURIDAD: configuración generada para desarrollo; no asumir configuración productiva. Sin API de escritura de noticias verificada.
+[06] RENDIMIENTO: sin mediciones; no hay colas ni caché verificadas.
+[07] DECISIONES: 2026-11-15, GEO-DB-01 propone modelo relacional; la evidencia, atribución y perspectiva preceden publicación. Estado: propuesta para implementación.
+[08] HISTORIAL: documento de diseño generado; no se ejecutó código ni migración por rol arquitectónico.
+[09] ESTADO: contenido COP31 estático con fuentes; modelo y seed pendientes de desarrollo y validación independiente.
+[10] PRÓXIMO: developer implementa contrato, reporta migraciones y pruebas; integrar revisión de afirmaciones, sin asumir ingestión automática.
+[11] VIGENCIA: 2026-11-15; commit 2c7534a, árbol modificado sin confirmar; revisados settings.py, models.py, views.py, news_data.py, requirements.txt; puede cambiar por trabajo concurrente.

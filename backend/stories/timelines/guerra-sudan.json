@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "story": {
+    "slug": "guerra-sudan",
+    "title": "Guerra en Sudán",
+    "summary": "Selección parcial de hitos de la guerra entre las Fuerzas Armadas Sudanesas (FAS) y las Fuerzas de Apoyo Rápido (FAR), iniciada el 15 de abril de 2023, verificada con fuentes consultadas el 15 de noviembre de 2026. No es exhaustiva; se amplía manualmente cuando hay nuevas fuentes verificadas. La guerra continúa a la fecha de consulta. Los puntos del mapa son referencias de ciudades, no posiciones de fuerzas, frentes ni control territorial.",
+    "kind": "conflict"
+  },
+  "as_of": "2026-11-15",
+  "sources": {
+    "ocha_flash_2023_04_16": {
+      "url": "https://www.unocha.org/publications/report/sudan/sudan-clashes-between-sudanese-armed-forces-and-rapid-support-forces-flash-update-16-april-2023-enar",
+      "title": "Sudan: Clashes between the Sudanese Armed Forces & and Rapid Support Forces, Flash update (16 April 2023) [EN/AR]",
+      "creator": "Oficina de la ONU para la Coordinación de Asuntos Humanitarios (OCHA)",
+      "published_at": "2023-04-16",
+      "rights_note": "Documento institucional de la ONU; se enlaza y parafrasea. Condiciones de reutilización pendientes de revisión."
+    },
+    "unnews_2023_05_12": {
+      "url": "https://news.un.org/en/story/2023/05/1136592",
+      "title": "Sudan’s warring generals take ‘important first step’ on humanitarian protection",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2023-05-12",
+      "rights_note": "Noticia institucional de la ONU; se enlaza y parafrasea. Condiciones de reutilización pendientes de revisión."
+    },
+    "state_jeddah_2023": {
+      "url": "https://2021-2025.state.gov/jeddah-declaration-of-commitment-to-protect-the-civilians-of-sudan/",
+      "title": "Jeddah Declaration of Commitment to Protect the Civilians of Sudan",
+      "creator": "Departamento de Estado de Estados Unidos (sitio de archivo 2021-2025)",
+      "published_at": "2023-05-12",
+      "rights_note": "Texto oficial de un Gobierno facilitador, publicado en un sitio de archivo; fecha tomada de los metadatos (UTC). Se enlaza y parafrasea."
+    },
+    "wfp_2024_08_01": {
+      "url": "https://www.wfp.org/news/famine-confirmed-sudans-north-darfur-confirming-un-agencies-worst-fears",
+      "title": "Famine confirmed in Sudan’s North Darfur, confirming UN agencies worst fears",
+      "creator": "Programa Mundial de Alimentos (PMA) y UNICEF",
+      "published_at": "2024-08-01",
+      "rights_note": "Comunicado de agencias de la ONU; se enlaza y parafrasea. Condiciones de reutilización pendientes de revisión."
+    },
+    "fewsnet_2024_08_01": {
+      "url": "https://fews.net/famine-ipc-phase-5-confirmed-sudans-zamzam-idp-camp-al-fasher",
+      "title": "Famine (IPC Phase 5) Confirmed in Sudan’s Zamzam IDP Camp in Al Fasher",
+      "creator": "Famine Early Warning Systems Network (FEWS NET)",
+      "published_at": "2024-08-01",
+      "rights_note": "Comunicado de una red de alerta temprana financiada por el Gobierno de EE. UU.; evaluación propia, distinta de la del FRC. Se enlaza y parafrasea."
+    },
+    "ap_pbs_2025_03_21": {
+      "url": "https://www.pbs.org/newshour/world/sudans-military-says-it-has-retaken-republican-palace-in-khartoum-seat-of-nations-government",
+      "title": "Sudan’s military says it has retaken Republican Palace in Khartoum, seat of nation’s government",
+      "creator": "Samy Magdy y Jon Gambrell, Associated Press (publicado por PBS NewsHour)",
+      "published_at": "2025-03-21",
+      "rights_note": "Contenido de agencia con derechos reservados; parafrasear y enlazar, sin imágenes."
+    },
+    "aj_palacio_2025_03_21": {
+      "url": "https://www.aljazeera.com/program/newsfeed/2025/3/21/sudanese-army-retakes-presidential-palace",
+      "title": "Sudanese army retakes presidential palace",
+      "creator": "Al Jazeera",
+      "published_at": "2025-03-21",
+      "rights_note": "Pieza de vídeo con texto breve; derechos reservados. Parafrasear y enlazar."
+    },
+    "africanews_2025_07_03": {
+      "url": "https://www.africanews.com/2025/07/03/sundan-fsr-paramilitaries-and-allies-declare-parallel-government/",
+      "title": "Sudan: RSF paramilitaries and allies declare parallel government",
+      "creator": "Dominic Wabwireh y otras agencias, Africanews",
+      "published_at": "2025-07-03",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "aj_tasis_2025_07_26": {
+      "url": "https://www.aljazeera.com/news/2025/7/26/rsf-paramilitary-led-coalition-forms-parallel-government-in-war-torn-sudan",
+      "title": "RSF paramilitary-led coalition forms parallel government in war-torn Sudan",
+      "creator": "Al Jazeera Staff",
+      "published_at": "2025-07-26",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "unnews_2025_08_13": {
+      "url": "https://news.un.org/en/story/2025/08/1165645",
+      "title": "Security Council rejects creation of rival government in Sudan",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2025-08-13",
+      "rights_note": "Noticia institucional de la ONU sobre la declaración a la prensa SC/16144; se enlaza y parafrasea."
+    },
+    "mofa_uae_quad_2025_09_12": {
+      "url": "https://www.mofa.gov.ae/en/mediahub/news/2025/9/12/12-9-2025-uae-sudan",
+      "title": "Joint Statement on Restoring Peace and Security in Sudan",
+      "creator": "Ministerio de Asuntos Exteriores de Emiratos Árabes Unidos (texto de la declaración conjunta del Quad)",
+      "published_at": "2025-09-12",
+      "rights_note": "Texto oficial publicado por uno de los firmantes; EAU es parte interesada señalada por el Gobierno sudanés. Se enlaza y parafrasea."
+    },
+    "africanews_2025_09_13": {
+      "url": "https://www.africanews.com/2025/09/13/us-egypt-saudi-arabia-and-uae-put-forward-roadmap-for-peace-in-sudan/",
+      "title": "US, Egypt, Saudi Arabia and UAE put forward roadmap for peace in Sudan",
+      "creator": "Africanews",
+      "published_at": "2025-09-13",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "aj_quad_2025_11_24": {
+      "url": "https://www.aljazeera.com/news/2025/11/24/sudan-army-chief-rejects-truce-proposal-citing-uae-role",
+      "title": "Sudan army chief rejects the Quad’s truce proposal, citing UAE role",
+      "creator": "Maziar Motamedi, Al Jazeera",
+      "published_at": "2025-11-24",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "ohchr_sudan_2025_10_27": {
+      "url": "https://sudan.un.org/en/304113-appalling-reports-summary-executions-and-other-serious-violations-rsf-makes-major",
+      "title": "Appalling reports of summary executions and other serious violations, as RSF makes major territorial gains in El Fasher and North Kordofan",
+      "creator": "Oficina del Alto Comisionado de la ONU para los Derechos Humanos (publicado por las Naciones Unidas en Sudán)",
+      "published_at": "2025-10-27",
+      "rights_note": "Comunicado institucional de la ONU; se enlaza y parafrasea."
+    },
+    "unnews_2025_10_27": {
+      "url": "https://news.un.org/en/story/2025/10/1166190",
+      "title": "Risk of large-scale atrocities in Sudan’s El Fasher grows ‘by the day’",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2025-10-27",
+      "rights_note": "Noticia institucional de la ONU; se enlaza y parafrasea."
+    },
+    "unnews_2025_10_30": {
+      "url": "https://news.un.org/en/story/2025/10/1166224",
+      "title": "‘Blood on the sand. Blood on the hands’: UN decries world’s failure as Sudan’s El Fasher falls",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2025-10-30",
+      "rights_note": "Noticia institucional de la ONU; se enlaza y parafrasea."
+    },
+    "aj_fasher_2025_10_28": {
+      "url": "https://www.aljazeera.com/news/2025/10/28/sudan-army-announces-withdrawal-from-el-fasher-un-warns-of-rsf-atrocities",
+      "title": "Sudan army withdraws from Darfur’s el-Fasher, UN warns of RSF atrocities",
+      "creator": "Al Jazeera Staff",
+      "published_at": "2025-10-28",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "africanews_2025_10_30": {
+      "url": "https://www.africanews.com/2025/10/30/rsf-commander-admits-violations-after-hundreds-of-civilians-reportedly-killed-in-el-fasher/",
+      "title": "RSF Commander admits \"violations\" after hundreds of civilians reportedly killed in el-Fasher",
+      "creator": "Africanews",
+      "published_at": "2025-10-30",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "aj_jartum_2026_01_11": {
+      "url": "https://www.aljazeera.com/news/2026/1/11/sudan-announces-governments-return-to-khartoum-from-wartime-capital",
+      "title": "Sudan announces government’s return to Khartoum from wartime capital",
+      "creator": "Al Jazeera",
+      "published_at": "2026-01-11",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "dabanga_2026_01_12": {
+      "url": "https://www.dabangasudan.org/en/all-news/article/sudan-govt-returns-to-khartoum-after-1000-days-of-war",
+      "title": "Sudan govt returns to Khartoum after 1,000 days of war",
+      "creator": "Radio Dabanga",
+      "published_at": "2026-01-12",
+      "rights_note": "Medio sudanés independiente con sede en Países Bajos; derechos reservados. Parafrasear y enlazar."
+    },
+    "enca_2026_10_21": {
+      "url": "https://www.enca.com/news/no-military-solution-sudan-un-envoy-0",
+      "title": "No military solution in Sudan: UN envoy",
+      "creator": "eNCA (texto con origen aparente en AFP; firma no visible en la página)",
+      "published_at": "2026-10-21",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "anadolu_2026_10_21": {
+      "url": "https://www.anews.com.tr/world/2026/10/21/diplomatic-efforts-to-end-sudan-war-intensify-despite-continued-fighting-un-envoy/amp",
+      "title": "Diplomatic efforts to end Sudan war intensify despite continued fighting: UN envoy",
+      "creator": "Anadolu Agency (publicado por A News)",
+      "published_at": "2026-10-21",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "dabanga_2026_10_25": {
+      "url": "https://www.dabangasudan.org/en/all-news/article/intensive-intl-and-un-efforts-to-end-sudan-war",
+      "title": "Intensive int’l and UN efforts to end Sudan war",
+      "creator": "Radio Dabanga",
+      "published_at": "2026-10-25",
+      "rights_note": "Derechos reservados; parafrasear y enlazar."
+    },
+    "unnews_2026_10_23": {
+      "url": "https://news.un.org/en/story/2026/10/1168661",
+      "title": "Sudan: Drone strikes killed at least 306 people in three weeks",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2026-10-23",
+      "rights_note": "Noticia institucional de la ONU; se enlaza y parafrasea."
+    },
+    "unnews_2026_10_28": {
+      "url": "https://news.un.org/en/story/2026/10/1168696",
+      "title": "Civilians in Sudan’s El Obeid trapped between drones and incarceration",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2026-10-28",
+      "rights_note": "Noticia institucional de la ONU; se enlaza y parafrasea."
+    },
+    "unnews_2026_11_03": {
+      "url": "https://news.un.org/en/story/2026/11/1168731",
+      "title": "‘This is not about politics. This is about people’: UN warns of impact of deadly drone strikes in Sudan",
+      "creator": "UN News (Naciones Unidas)",
+      "published_at": "2026-11-03",
+      "rights_note": "Entrevista institucional de la ONU; se enlaza y parafrasea."
+    },
+    "ungegn_jartum": {
+      "url": "https://ungegn.un.org/dashboard/cities/details?id=75",
+      "title": "City Details — Khartoum",
+      "creator": "UNGEGN / Sección Cartográfica de las Naciones Unidas",
+      "published_at": null,
+      "rights_note": "Coordenadas atribuidas a la Sección Cartográfica de la ONU; licencia de reutilización pendiente de revisión."
+    },
+    "ungegn_yeda": {
+      "url": "https://ungegn.un.org/dashboard/cities/details?id=3388",
+      "title": "City Details — Jiddah",
+      "creator": "UNGEGN / Permanent National Committee of Geographic Names (PNCGN), King Abdulaziz Foundation for Research and Archives",
+      "published_at": null,
+      "rights_note": "Coordenadas atribuidas por UNGEGN a un organismo nacional saudí; licencia de reutilización pendiente de revisión."
+    },
+    "ungegn_ginebra": {
+      "url": "https://ungegn.un.org/dashboard/cities/details?id=817",
+      "title": "City Details — Geneva",
+      "creator": "UNGEGN / Swisstopo",
+      "published_at": null,
+      "rights_note": "Coordenadas atribuidas a Swisstopo (dos decimales); licencia de reutilización pendiente de revisión."
+    },
+    "geonames_el_fasher": {
+      "url": "https://www.geonames.org/379555/el-fasher.html",
+      "title": "El Fasher (GeoNames 379555)",
+      "creator": "GeoNames",
+      "published_at": null,
+      "rights_note": "GeoNames se distribuye con licencia CC BY 4.0; requiere atribución."
+    },
+    "geonames_nyala": {
+      "url": "https://www.geonames.org/369004/nyala.html",
+      "title": "Nyala (GeoNames 369004)",
+      "creator": "GeoNames",
+      "published_at": null,
+      "rights_note": "GeoNames se distribuye con licencia CC BY 4.0; requiere atribución."
+    },
+    "geonames_jartum_norte": {
+      "url": "https://www.geonames.org/379251/khartoum-north.html",
+      "title": "Khartoum North (GeoNames 379251)",
+      "creator": "GeoNames",
+      "published_at": null,
+      "rights_note": "GeoNames se distribuye con licencia CC BY 4.0; requiere atribución."
+    }
+  },
+  "actors": {
+    "fas": {"name": "Fuerzas Armadas Sudanesas (FAS)", "kind": "organization", "country_code": "SD"},
+    "far": {"name": "Fuerzas de Apoyo Rápido (FAR)", "kind": "organization", "country_code": "SD"},
+    "tasis": {"name": "Alianza Fundadora de Sudán (Tasis)", "kind": "organization", "country_code": "SD"},
+    "gobierno_sudan": {"name": "Gobierno de Sudán", "kind": "organization", "country_code": "SD"},
+    "burhan": {"name": "Abdel Fattah al-Burhan", "kind": "person", "country_code": "SD"},
+    "hemedti": {"name": "Mohamed Hamdan Dagalo («Hemedti»)", "kind": "person", "country_code": "SD"},
+    "kamil_idris": {"name": "Kamil Idris", "kind": "person", "country_code": "SD"},
+    "al_aiser": {"name": "Khaled al-Aiser", "kind": "person", "country_code": "SD"},
+    "mutasim_ahmed": {"name": "Mutasim Ahmed", "kind": "person", "country_code": "SD"},
+    "arabia_saudi": {"name": "Arabia Saudí", "kind": "country", "country_code": "SA"},
+    "eeuu": {"name": "Estados Unidos", "kind": "country", "country_code": "US"},
+    "eau": {"name": "Emiratos Árabes Unidos", "kind": "country", "country_code": "AE"},
+    "egipto": {"name": "Egipto", "kind": "country", "country_code": "EG"},
+    "suiza": {"name": "Suiza", "kind": "country", "country_code": "CH"},
+    "quad": {"name": "Quad sobre Sudán (Estados Unidos, Arabia Saudí, Egipto y Emiratos Árabes Unidos)", "kind": "other", "country_code": ""},
+    "reunion_ginebra": {"name": "Participantes en la sexta reunión consultiva sobre Sudán (Ginebra, 2026)", "kind": "other", "country_code": ""},
+    "onu": {"name": "Naciones Unidas", "kind": "organization", "country_code": ""},
+    "guterres": {"name": "António Guterres", "kind": "person", "country_code": ""},
+    "acnudh": {"name": "Oficina del Alto Comisionado de la ONU para los Derechos Humanos (ACNUDH)", "kind": "organization", "country_code": ""},
+    "fletcher": {"name": "Tom Fletcher", "kind": "person", "country_code": ""},
+    "csnu": {"name": "Consejo de Seguridad de la ONU", "kind": "organization", "country_code": ""},
+    "oim": {"name": "Organización Internacional para las Migraciones (OIM)", "kind": "organization", "country_code": ""},
+    "pma": {"name": "Programa Mundial de Alimentos (PMA)", "kind": "organization", "country_code": ""},
+    "frc": {"name": "Comité de Examen de la Hambruna (FRC) de la CIF", "kind": "organization", "country_code": ""},
+    "fewsnet": {"name": "Famine Early Warning Systems Network (FEWS NET)", "kind": "organization", "country_code": ""},
+    "haavisto": {"name": "Pekka Haavisto", "kind": "person", "country_code": ""},
+    "denise_brown": {"name": "Denise Brown", "kind": "person", "country_code": ""},
+    "ffm_sudan": {"name": "Misión Internacional Independiente de Investigación para el Sudán", "kind": "organization", "country_code": ""},
+    "ap": {"name": "Associated Press", "kind": "organization", "country_code": "US"}
+  },
+  "events": [
+    {
+      "slug": "sudan-inicio-combates-2023",
+      "title": "Estallan los combates entre las FAS y las FAR en Jartum",
+      "category": "conflicto",
+      "start_date": "2023-04-15",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "El 15 de abril de 2023 estallaron en Jartum combates entre las Fuerzas Armadas Sudanesas y las Fuerzas de Apoyo Rápido. Las FAR afirmaron haber tomado instalaciones clave de la capital; OCHA señaló que no estaba claro qué parte controlaba cada una.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 15 de abril de 2023, poco antes de las 09:00, estallaron combates entre las Fuerzas Armadas Sudanesas (FAS) y las Fuerzas de Apoyo Rápido (FAR) en Jartum, con disparos y explosiones en varios puntos de la ciudad, según OCHA.", "attributed_to": null,
+         "evidence": [
+           {"source": "ocha_flash_2023_04_16", "locator": "Puntos destacados, punto 1; texto principal, párr. 1 («Conflict between the Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) erupted in Khartoum just before 09:00 a.m. on 15 April 2023»)"},
+           {"source": "unnews_2023_05_12", "locator": "Sección «Combatants warned of the consequences: Perthes», párr. 1: menciona el inicio de las hostilidades el 15 de abril"}
+         ]},
+        {"key": "c2", "kind": "statement", "text": "Según OCHA, las FAR difundieron un comunicado en el que afirmaban haber tomado el aeropuerto internacional de Jartum, el Palacio Presidencial y la televisión estatal; OCHA indicó que no estaba claro qué parte controlaba cada instalación clave.", "attributed_to": "far",
+         "evidence": [
+           {"source": "ocha_flash_2023_04_16", "locator": "Texto principal, párrs. 1 y 2 (comunicado de las FAR; «It is unclear which side currently controls which key facility or areas»)"}
+         ]}
+      ],
+      "location": {"label": "Jartum, Sudán", "coordinates": [32.5587, 15.5562],
+                   "note": "Referencia aproximada de la ciudad de Jartum. No indica el lugar de ningún combate concreto, posiciones de fuerzas, frentes ni control territorial.",
+                   "source": "ungegn_jartum", "source_locator": "City Details — Khartoum, coordenadas (32.5587195799, 15.5562085782), fuente: United Nations Cartographic Section"},
+      "participations": [
+        {"actor": "fas", "role": "participant", "claim": "c1", "note": "Parte en los combates."},
+        {"actor": "far", "role": "participant", "claim": "c1", "note": "Parte en los combates."}
+      ]
+    },
+    {
+      "slug": "sudan-declaracion-yeda-2023",
+      "title": "Declaración de Yeda para proteger a los civiles",
+      "category": "negociacion",
+      "start_date": "2023-05-11",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "Representantes de las FAS y de las FAR firmaron en Yeda, con facilitación de Arabia Saudí y Estados Unidos, una declaración de compromiso para proteger a los civiles. El texto prevé negociar después un alto el fuego; no es un acuerdo de paz.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 11 de mayo de 2023 representantes de las FAS y de las FAR firmaron en Yeda la Declaración de Compromiso para Proteger a los Civiles de Sudán, con la facilitación de Arabia Saudí y Estados Unidos.", "attributed_to": null,
+         "evidence": [
+           {"source": "state_jeddah_2023", "locator": "Preámbulo, párr. 1 (firmantes) y línea final («Signed in Jeddah on 11 May 2023 with the facilitation of the Kingdom of Saudi Arabia and the United States of America»)"},
+           {"source": "unnews_2023_05_12", "locator": "Párrs. 1–3 del cuerpo (declaración de las partes y continuación de las conversaciones en Yeda)"}
+         ]},
+        {"key": "c2", "kind": "fact", "text": "En la declaración, las partes reafirman sus obligaciones de derecho internacional humanitario y se comprometen a priorizar conversaciones para un alto el fuego a corto plazo y a programar conversaciones posteriores para un cese permanente de hostilidades.", "attributed_to": null,
+         "evidence": [
+           {"source": "state_jeddah_2023", "locator": "Preámbulo, párr. 1; compromisos, puntos 1 y 7"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "El Secretario General de la ONU, mediante su portavoz, acogió la declaración, expresó la esperanza de que permita ampliar la operación de ayuda y reiteró su llamamiento a un alto el fuego inmediato.", "attributed_to": "guterres",
+         "evidence": [
+           {"source": "unnews_2023_05_12", "locator": "Párrs. 4–6 del cuerpo (declaración del portavoz del Secretario General)"}
+         ]}
+      ],
+      "location": {"label": "Yeda, Arabia Saudí", "coordinates": [39.177, 21.5844],
+                   "note": "Referencia aproximada de la ciudad donde se firmó la declaración; no indica el recinto exacto.",
+                   "source": "ungegn_yeda", "source_locator": "City Details — Jiddah, coordenadas (39.176966, 21.584361), fuente: Permanent National Committee of Geographic Names (PNCGN)"},
+      "participations": [
+        {"actor": "fas", "role": "participant", "claim": "c1", "note": "Firmante."},
+        {"actor": "far", "role": "participant", "claim": "c1", "note": "Firmante."},
+        {"actor": "arabia_saudi", "role": "host", "claim": "c1", "note": "Facilitador y anfitrión, según el texto."},
+        {"actor": "eeuu", "role": "other", "claim": "c1", "note": "Facilitador, según el texto."}
+      ]
+    },
+    {
+      "slug": "sudan-hambruna-zamzam-2024",
+      "title": "Se confirma hambruna en el campamento de Zamzam",
+      "category": "humanitario",
+      "start_date": "2024-08-01",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "El 1 de agosto de 2024 se dio a conocer la conclusión del Comité de Examen de la Hambruna (FRC) de que había hambruna en el campamento de desplazados de Zamzam, cerca de El Fasher (Darfur Septentrional). FEWS NET publicó ese día una evaluación propia en el mismo sentido.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El Comité de Examen de la Hambruna (FRC) concluyó que había hambruna en el campamento de Zamzam, en Darfur Septentrional; según el PMA y UNICEF, fue la primera determinación de hambruna del comité en más de siete años.", "attributed_to": "frc",
+         "evidence": [
+           {"source": "wfp_2024_08_01", "locator": "Entradilla y párrs. 1–2 del comunicado fechado «ROME/NEW YORK/PORT SUDAN, 1 August 2024»"}
+         ]},
+        {"key": "c2", "kind": "fact", "text": "FEWS NET informó de que existía evidencia razonable de que los umbrales de hambruna (fase 5 de la CIF) se superaron en el campamento de Zamzam en junio de 2024.", "attributed_to": "fewsnet",
+         "evidence": [
+           {"source": "fewsnet_2024_08_01", "locator": "Párrs. 1–2 del comunicado («Washington, D.C. – Famine (IPC Phase 5) is ongoing in the Zamzam camp...»)"}
+         ]},
+        {"key": "c3", "kind": "fact", "text": "El comunicado del PMA y UNICEF describe Zamzam como un campamento que acoge a más de 400.000 desplazados.", "attributed_to": "pma",
+         "evidence": [
+           {"source": "wfp_2024_08_01", "locator": "Entradilla («home to more than 400,000 displaced people»)"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "El PMA y UNICEF señalaron que las graves restricciones al acceso humanitario son uno de los principales factores de la hambruna en Zamzam.", "attributed_to": "pma",
+         "evidence": [
+           {"source": "wfp_2024_08_01", "locator": "Párr. 6 del cuerpo («Severely restricted humanitarian access is one of the main drivers...»)"}
+         ]}
+      ],
+      "location": {"label": "El Fasher (referencia para el campamento de Zamzam), Sudán", "coordinates": [25.3494, 13.6279],
+                   "note": "Referencia aproximada de la ciudad de El Fasher; el campamento de Zamzam está en sus inmediaciones, pero no se localizó con una fuente geográfica verificada. No indica límites del campamento, posiciones de fuerzas ni control territorial.",
+                   "source": "geonames_el_fasher", "source_locator": "Ficha GeoNames 379555, El Fasher: latitud 13.62793, longitud 25.34936"},
+      "participations": [
+        {"actor": "frc", "role": "other", "claim": "c1", "note": "Órgano técnico que emitió la determinación."},
+        {"actor": "fewsnet", "role": "other", "claim": "c2", "note": "Evaluación independiente de la del FRC."}
+      ]
+    },
+    {
+      "slug": "sudan-palacio-jartum-2025",
+      "title": "Las FAS retoman el Palacio Republicano en Jartum",
+      "category": "conflicto",
+      "start_date": "2025-03-21",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "El 21 de marzo de 2025 el ejército sudanés retomó el Palacio Republicano de Jartum, en poder de las FAR desde el inicio de la guerra. Las FAR afirmaron que seguían combatiendo en los alrededores.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 21 de marzo de 2025 el ejército sudanés retomó el Palacio Republicano de Jartum, casi dos años después de que lo tomaran las FAR.", "attributed_to": null,
+         "evidence": [
+           {"source": "ap_pbs_2025_03_21", "locator": "Párr. 1 (entradilla «CAIRO (AP) — Sudan's military on Friday retook the Republican Palace in Khartoum...») y párrafo sobre los vídeos fechados el 21 de Ramadán"},
+           {"source": "aj_palacio_2025_03_21", "locator": "Texto de presentación del vídeo"}
+         ]},
+        {"key": "c2", "kind": "statement", "text": "El ministro de Información, Khaled al-Aiser, afirmó en la red social X que el ejército había retomado el palacio.", "attributed_to": "al_aiser",
+         "evidence": [
+           {"source": "ap_pbs_2025_03_21", "locator": "Párrafos que citan a Khaled al-Aiser"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "Un político vinculado a las FAR, Suleiman Sandal, reconoció que el ejército había tomado el palacio; las FAR afirmaron después en un comunicado que sus fuerzas seguían presentes y combatiendo en los alrededores.", "attributed_to": "far",
+         "evidence": [
+           {"source": "ap_pbs_2025_03_21", "locator": "Párrafos sobre Suleiman Sandal y el comunicado posterior de las FAR"}
+         ]},
+        {"key": "c4", "kind": "analysis", "text": "AP valoró la toma del palacio como una victoria simbólica importante para el ejército, aunque probablemente no suponía el fin de la guerra, ya que las FAR mantenían territorio en Darfur y otras zonas.", "attributed_to": "ap",
+         "evidence": [
+           {"source": "ap_pbs_2025_03_21", "locator": "Párrafo «The seizure of the Republican Palace, surrounded by government ministries, was a major symbolic victory...»"}
+         ]}
+      ],
+      "location": {"label": "Jartum, Sudán", "coordinates": [32.5587, 15.5562],
+                   "note": "Referencia aproximada de la ciudad de Jartum; no marca la ubicación exacta del palacio ni posiciones de fuerzas o control territorial.",
+                   "source": "ungegn_jartum", "source_locator": "City Details — Khartoum, coordenadas (32.5587195799, 15.5562085782), fuente: United Nations Cartographic Section"},
+      "participations": [
+        {"actor": "fas", "role": "participant", "claim": "c1", "note": ""},
+        {"actor": "far", "role": "participant", "claim": "c3", "note": "Declaración de las FAR sobre la situación en los alrededores."}
+      ]
+    },
+    {
+      "slug": "sudan-gobierno-paralelo-tasis-2025",
+      "title": "La alianza Tasis, encabezada por las FAR, anuncia un gobierno paralelo",
+      "category": "politica",
+      "start_date": "2025-07-01",
+      "end_date": "2025-07-26",
+      "date_precision": "range",
+      "summary": "En julio de 2025 la alianza Tasis, aliada de las FAR, anunció primero un consejo de gobierno en Nyala (1 de julio) y después un gobierno alternativo con Hemedti al frente del consejo presidencial (26 de julio). El Consejo de Seguridad de la ONU rechazó la iniciativa el 13 de agosto.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 1 de julio de 2025 la alianza Tasis, aliada de las FAR, anunció en Nyala (Darfur del Sur) la creación de un consejo de gobierno de 31 miembros presidido por Mohamed Hamdan Dagalo («Hemedti»), según Africanews.", "attributed_to": null,
+         "evidence": [
+           {"source": "africanews_2025_07_03", "locator": "Sección «Sudan», párrs. 1, 3 y 5–7 (anuncio del 1 de julio, objetivo de gobierno paralelo, Nyala, 31 miembros, Hemedti presidente)"}
+         ]},
+        {"key": "c2", "kind": "fact", "text": "El 26 de julio de 2025 la coalición anunció un gobierno alternativo con un consejo presidencial de 15 miembros presidido por Hemedti y con Mohammed Hassan Osman al-Ta'ishi como primer ministro, según Al Jazeera.", "attributed_to": null,
+         "evidence": [
+           {"source": "aj_tasis_2025_07_26", "locator": "Párrs. 1–3 del cuerpo"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "La coalición declaró en un comunicado su compromiso con un Sudán laico, democrático, descentralizado y voluntariamente unido.", "attributed_to": "tasis",
+         "evidence": [
+           {"source": "aj_tasis_2025_07_26", "locator": "Párrs. 4–5 del cuerpo (cita del comunicado de la coalición)"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "El 13 de agosto de 2025 el Consejo de Seguridad de la ONU rechazó la declaración de una administración rival por parte de las FAR y la calificó de amenaza directa a la integridad territorial de Sudán.", "attributed_to": "csnu",
+         "evidence": [
+           {"source": "unnews_2025_08_13", "locator": "Párrs. 1–2 del cuerpo"}
+         ]}
+      ],
+      "location": {"label": "Nyala, Darfur del Sur, Sudán", "coordinates": [24.8807, 12.0489],
+                   "note": "Referencia aproximada de la ciudad donde, según Africanews, se anunció el consejo el 1 de julio; Al Jazeera no indica el lugar del anuncio del 26 de julio. No representa control territorial ni posiciones de fuerzas.",
+                   "source": "geonames_nyala", "source_locator": "Ficha GeoNames 369004, Nyala: latitud 12.04888, longitud 24.88069"},
+      "participations": [
+        {"actor": "tasis", "role": "declared_initiator", "claim": "c1", "note": ""},
+        {"actor": "far", "role": "participant", "claim": "c1", "note": "Integrante principal de la alianza."},
+        {"actor": "hemedti", "role": "participant", "claim": "c2", "note": "Presidente del consejo presidencial anunciado."},
+        {"actor": "csnu", "role": "other", "claim": "c4", "note": "Rechazo de la iniciativa."}
+      ]
+    },
+    {
+      "slug": "sudan-hoja-ruta-quad-2025",
+      "title": "El Quad propone una tregua humanitaria de tres meses",
+      "category": "negociacion",
+      "start_date": "2025-09-12",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "Estados Unidos, Emiratos Árabes Unidos, Egipto y Arabia Saudí publicaron una declaración conjunta que propone una tregua humanitaria inicial de tres meses, un alto el fuego permanente y una transición de nueve meses. En noviembre, las FAR dijeron aceptar la tregua y el jefe del ejército rechazó la propuesta.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 12 de septiembre de 2025 los ministros de Exteriores de Estados Unidos, Emiratos Árabes Unidos, Egipto y Arabia Saudí publicaron una declaración conjunta que pide una tregua humanitaria inicial de tres meses, que conduzca a un alto el fuego permanente y a un proceso de transición que concluya en nueve meses.", "attributed_to": null,
+         "evidence": [
+           {"source": "mofa_uae_quad_2025_09_12", "locator": "Párrafo introductorio y principio «Fourth» de la declaración"},
+           {"source": "africanews_2025_09_13", "locator": "Párrs. 1–2 del cuerpo"}
+         ]},
+        {"key": "c2", "kind": "statement", "text": "Los cuatro países afirmaron que no hay una solución militar viable y que el apoyo militar externo a las partes intensifica y prolonga el conflicto.", "attributed_to": "quad",
+         "evidence": [
+           {"source": "mofa_uae_quad_2025_09_12", "locator": "Principios «Second» y «Fifth» de la declaración"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "En noviembre de 2025 las FAR afirmaron aceptar la parte de la propuesta relativa a la tregua humanitaria, según Al Jazeera.", "attributed_to": "far",
+         "evidence": [
+           {"source": "aj_quad_2025_11_24", "locator": "Párrafo «The RSF said this month that it “affirms its agreement to enter into the humanitarian truce”...»"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "En un discurso difundido por su oficina el 23 de noviembre de 2025, Abdel Fattah al-Burhan rechazó la propuesta, afirmó que eliminaría de hecho a las fuerzas armadas y calificó de parcial la mediación por la participación de Emiratos Árabes Unidos.", "attributed_to": "burhan",
+         "evidence": [
+           {"source": "aj_quad_2025_11_24", "locator": "Párrs. 1 y 3 del cuerpo y párrafos finales sobre la credibilidad del Quad"}
+         ]},
+        {"key": "c5", "kind": "statement", "text": "Emiratos Árabes Unidos rechaza desde hace tiempo las acusaciones de armar y financiar a las FAR, según Al Jazeera; su ministra de Estado Reem Al Hashimy acusó a al-Burhan de conducta obstruccionista.", "attributed_to": "eau",
+         "evidence": [
+           {"source": "aj_quad_2025_11_24", "locator": "Párr. 2 del cuerpo y párrafos que citan a Reem bint Ebrahim Al Hashimy"}
+         ]}
+      ],
+      "location": null,
+      "participations": [
+        {"actor": "eeuu", "role": "declared_initiator", "claim": "c1", "note": "Convocante de las consultas según la declaración."},
+        {"actor": "eau", "role": "declared_initiator", "claim": "c1", "note": "Firmante de la declaración conjunta."},
+        {"actor": "egipto", "role": "declared_initiator", "claim": "c1", "note": "Firmante de la declaración conjunta."},
+        {"actor": "arabia_saudi", "role": "declared_initiator", "claim": "c1", "note": "Firmante de la declaración conjunta."},
+        {"actor": "far", "role": "other", "claim": "c3", "note": "Respuesta a la propuesta."},
+        {"actor": "fas", "role": "other", "claim": "c4", "note": "Respuesta del jefe del ejército."}
+      ]
+    },
+    {
+      "slug": "sudan-caida-el-fasher-2025",
+      "title": "Las FAR toman El Fasher",
+      "category": "conflicto",
+      "start_date": "2025-10-26",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "El 26 de octubre de 2025 las FAR anunciaron la toma de la base de la 6.ª División de Infantería del ejército en El Fasher, capital de Darfur Septentrional, tras un largo asedio. El ejército confirmó su retirada; la ONU informó de denuncias de ejecuciones sumarias y de decenas de miles de desplazados.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 26 de octubre de 2025 las FAR anunciaron la toma de la base de la 6.ª División de Infantería del ejército en El Fasher, ciudad que llevaba unos 18 meses bajo su asedio, según la Oficina de Derechos Humanos de la ONU.", "attributed_to": null,
+         "evidence": [
+           {"source": "ohchr_sudan_2025_10_27", "locator": "Párr. 2 (cita de Volker Türk: «since the RSF yesterday announced its takeover of the army’s 6th Infantry Division») y párr. 6 (asedio de 18 meses)"},
+           {"source": "aj_fasher_2025_10_28", "locator": "Párrs. 1–2 del cuerpo"}
+         ]},
+        {"key": "c2", "kind": "statement", "text": "Abdel Fattah al-Burhan anunció el 27 de octubre la retirada de sus tropas de El Fasher, que atribuyó a la destrucción y a las muertes de civiles causadas por las FAR, y prometió que los responsables rendirían cuentas.", "attributed_to": "burhan",
+         "evidence": [
+           {"source": "aj_fasher_2025_10_28", "locator": "Párrs. 1–2 y 4–6 del cuerpo"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "La Oficina de Derechos Humanos de la ONU dijo haber recibido múltiples informes de ejecuciones sumarias de civiles que intentaban huir, con indicios de motivación étnica, y de personas fuera de combate; Volker Türk advirtió de que el riesgo de nuevas atrocidades aumentaba cada día.", "attributed_to": "acnudh",
+         "evidence": [
+           {"source": "ohchr_sudan_2025_10_27", "locator": "Párrs. 1–4"},
+           {"source": "unnews_2025_10_27", "locator": "Párrs. 1–3 del cuerpo"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "El jefe humanitario de la ONU, Tom Fletcher, informó al Consejo de Seguridad el 30 de octubre de denuncias creíbles de ejecuciones generalizadas y de que casi 500 pacientes y acompañantes habrían muerto en el Hospital Saudí de Maternidad.", "attributed_to": "fletcher",
+         "evidence": [
+           {"source": "unnews_2025_10_30", "locator": "Párrs. 1–4 del cuerpo"}
+         ]},
+        {"key": "c5", "kind": "statement", "text": "El comandante de las FAR, Mohamed Hamdan Dagalo, reconoció en Telegram que se habían producido violaciones en El Fasher y anunció la formación de un comité de investigación.", "attributed_to": "hemedti",
+         "evidence": [
+           {"source": "africanews_2025_10_30", "locator": "Párrs. 1 y 3 del cuerpo"}
+         ]},
+        {"key": "c6", "kind": "fact", "text": "Según cifras de la OIM recogidas por la prensa, más de 26.000 personas habían huido a 27 de octubre (Al Jazeera) y más de 36.000 desde el domingo 26 de octubre (Africanews, 30 de octubre), sobre todo hacia zonas rurales y la localidad de Tawila.", "attributed_to": "oim",
+         "evidence": [
+           {"source": "aj_fasher_2025_10_28", "locator": "Párrafo que cita a la Organización Internacional para las Migraciones («more than 26,000 people had fled their homes as of Monday»)"},
+           {"source": "africanews_2025_10_30", "locator": "Párr. 7 del cuerpo («more than 36,000 people have fled el-Fasher»)"}
+         ]}
+      ],
+      "location": {"label": "El Fasher, Darfur Septentrional, Sudán", "coordinates": [25.3494, 13.6279],
+                   "note": "Referencia aproximada de la ciudad; no marca la base militar, lugares de ataques, rutas de huida ni control territorial.",
+                   "source": "geonames_el_fasher", "source_locator": "Ficha GeoNames 379555, El Fasher: latitud 13.62793, longitud 25.34936"},
+      "participations": [
+        {"actor": "far", "role": "participant", "claim": "c1", "note": ""},
+        {"actor": "fas", "role": "participant", "claim": "c2", "note": "Retirada anunciada por su jefe."},
+        {"actor": "acnudh", "role": "other", "claim": "c3", "note": "Documentación de denuncias."}
+      ]
+    },
+    {
+      "slug": "sudan-gobierno-regresa-jartum-2026",
+      "title": "El Gobierno anuncia su regreso a Jartum desde Port Sudán",
+      "category": "politica",
+      "start_date": "2026-01-11",
+      "end_date": null,
+      "date_precision": "exact",
+      "summary": "El 11 de enero de 2026 el primer ministro Kamil Idris anunció el regreso del Gobierno a Jartum, tras casi tres años operando desde Port Sudán. Un ministro precisó que el regreso no significa el fin de la guerra.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "El 11 de enero de 2026 el primer ministro Kamil Idris anunció en Jartum el regreso del Gobierno a la capital, tras casi tres años operando desde Port Sudán, que había funcionado como capital administrativa provisional durante la guerra.", "attributed_to": null,
+         "evidence": [
+           {"source": "aj_jartum_2026_01_11", "locator": "Párrs. 1–2 y 4 del cuerpo"},
+           {"source": "dabanga_2026_01_12", "locator": "Párrs. 1–3 (anuncio en la plaza El Kadru, Jartum Norte; traslado a Port Sudán)"}
+         ]},
+        {"key": "c2", "kind": "fact", "text": "Según Al Jazeera, el Gobierno había iniciado un regreso gradual desde que el ejército recuperó la ciudad en marzo de 2025, y la ONU estima en unos 350 millones de dólares la rehabilitación de las infraestructuras esenciales de la capital.", "attributed_to": null,
+         "evidence": [
+           {"source": "aj_jartum_2026_01_11", "locator": "Párr. 3 del cuerpo (regreso gradual) y párrafo «According to the UN, the rehabilitation of the capital’s essential infrastructure would cost some $350m»"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "El ministro de Recursos Humanos y Bienestar Social, Mutasim Ahmed, afirmó que el regreso a Jartum no significa el fin de la guerra.", "attributed_to": "mutasim_ahmed",
+         "evidence": [
+           {"source": "dabanga_2026_01_12", "locator": "Sección «Return to Khartoum does not mean the end of the war», párr. 3"}
+         ]}
+      ],
+      "location": {"label": "Jartum Norte (Bahri), Sudán", "coordinates": [32.5346, 15.6493],
+                   "note": "Referencia aproximada de Jartum Norte, donde Radio Dabanga sitúa el anuncio; no indica el lugar exacto, sedes oficiales ni control territorial.",
+                   "source": "geonames_jartum_norte", "source_locator": "Ficha GeoNames 379251, Khartoum North: latitud 15.64925, longitud 32.53458"},
+      "participations": [
+        {"actor": "gobierno_sudan", "role": "declared_initiator", "claim": "c1", "note": ""},
+        {"actor": "kamil_idris", "role": "participant", "claim": "c1", "note": "Autor del anuncio."}
+      ]
+    },
+    {
+      "slug": "sudan-reunion-ginebra-2026",
+      "title": "Sexta reunión consultiva sobre Sudán en Ginebra",
+      "category": "negociacion",
+      "start_date": "2026-10-21",
+      "end_date": null,
+      "date_precision": "approximate",
+      "summary": "Veintiún países y cinco organizaciones internacionales se reunieron en Ginebra, en una reunión copresidida por la ONU y Suiza, sin presencia de las partes en guerra. El enviado de la ONU planteó medidas de confianza como intercambios de prisioneros; no se anunció ningún alto el fuego.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "Veintiún países y cinco organizaciones internacionales participaron en la sede de la ONU en Ginebra en la sexta reunión consultiva para coordinar las iniciativas de paz sobre Sudán, copresidida por la ONU y Suiza; las dos partes en guerra no estuvieron representadas. La rueda de prensa posterior se celebró el miércoles 21 de octubre de 2026.", "attributed_to": null,
+         "evidence": [
+           {"source": "enca_2026_10_21", "locator": "Párrs. 1–3 del cuerpo y párrafo «The meeting was co-chaired by the UN and Switzerland»"},
+           {"source": "anadolu_2026_10_21", "locator": "Párrs. 1–2 del cuerpo"}
+         ]},
+        {"key": "c2", "kind": "statement", "text": "El enviado personal del Secretario General para Sudán, Pekka Haavisto, afirmó que no hay solución militar, advirtió de que algunas partes aún creen en una victoria militar y dijo que la ONU explora medidas de confianza, como intercambios de prisioneros y detenidos y facilitar el acceso de estudiantes a los exámenes, que calificó de pequeños pasos.", "attributed_to": "haavisto",
+         "evidence": [
+           {"source": "enca_2026_10_21", "locator": "Párrafos que citan a Pekka Haavisto (5–10 del cuerpo)"},
+           {"source": "anadolu_2026_10_21", "locator": "Párrs. 5–9 del cuerpo"},
+           {"source": "dabanga_2026_10_25", "locator": "Entradilla y párr. 2"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "Según eNCA, la declaración final rechazó el establecimiento de gobiernos paralelos en Sudán e instó a los Estados extranjeros a abstenerse de alimentar la guerra con mercenarios, material militar, drones o apoyo financiero.", "attributed_to": "reunion_ginebra",
+         "evidence": [
+           {"source": "enca_2026_10_21", "locator": "Párrafos sobre la declaración final («Participants “rejected the establishment of parallel governments”»)"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "Según Radio Dabanga, un asesor sénior del presidente de Estados Unidos describió como muy productivas las reuniones del Quad en Ginebra y dijo que los cuatro países coincidieron en que no hay solución militar.", "attributed_to": "eeuu",
+         "evidence": [
+           {"source": "dabanga_2026_10_25", "locator": "Párrs. 3–5 del cuerpo"}
+         ]}
+      ],
+      "location": {"label": "Ginebra, Suiza", "coordinates": [6.14, 46.21],
+                   "note": "Referencia aproximada de la ciudad donde se celebró la reunión; no indica el recinto exacto.",
+                   "source": "ungegn_ginebra", "source_locator": "City Details — Geneva, coordenadas (6.14, 46.21), fuente: Swisstopo"},
+      "participations": [
+        {"actor": "onu", "role": "host", "claim": "c1", "note": "Copresidente."},
+        {"actor": "suiza", "role": "host", "claim": "c1", "note": "Copresidente."},
+        {"actor": "haavisto", "role": "participant", "claim": "c2", "note": "Enviado personal del Secretario General."}
+      ]
+    },
+    {
+      "slug": "sudan-escalada-drones-2026",
+      "title": "Escalada de ataques con drones en varios estados",
+      "category": "ataque",
+      "start_date": "2026-10-01",
+      "end_date": "2026-10-21",
+      "date_precision": "approximate",
+      "summary": "La Oficina de Derechos Humanos de la ONU documentó al menos 306 civiles muertos por ataques con drones en las tres primeras semanas de octubre de 2026, atribuidos a ambas partes, en Kordofán, Darfur, Nilo Azul, Jartum y otros estados. La ONU alertó del daño a electricidad, agua y combustible.",
+      "claims": [
+        {"key": "c1", "kind": "fact", "text": "La Oficina de Derechos Humanos de la ONU documentó al menos 306 muertos por ataques con drones en las tres primeras semanas de octubre de 2026, atribuidos tanto a las FAS como a las FAR, contra viviendas, mercados, hospitales, lugares de desplazados e infraestructuras de agua y electricidad en Kordofán, Darfur, Nilo Azul, Jartum y otros estados.", "attributed_to": "acnudh",
+         "evidence": [
+           {"source": "unnews_2026_10_23", "locator": "Párrs. 1–2 del cuerpo"}
+         ]},
+        {"key": "c2", "kind": "fact", "text": "Entre los casos citados por la ONU, al menos 139 personas murieron el 18 de octubre cuando un camión de transporte fue alcanzado por un ataque repetido en Dibab (Kordofán Occidental), zona controlada por las FAR.", "attributed_to": "acnudh",
+         "evidence": [
+           {"source": "unnews_2026_10_23", "locator": "Párr. 7 del cuerpo (caso de Dibab)"}
+         ]},
+        {"key": "c3", "kind": "statement", "text": "La coordinadora residente y humanitaria de la ONU en Sudán, Denise Brown, describió un patrón intenso de ataques con drones contra infraestructuras civiles que perturba el suministro de electricidad, agua y combustible y deja varados cientos de camiones de ayuda.", "attributed_to": "denise_brown",
+         "evidence": [
+           {"source": "unnews_2026_11_03", "locator": "Párrs. 1–2 del cuerpo y respuesta a la primera pregunta de la entrevista"}
+         ]},
+        {"key": "c4", "kind": "statement", "text": "La Misión Internacional Independiente de Investigación para el Sudán afirmó que octubre registró el mayor número de ataques con drones contra civiles desde el inicio del conflicto y dijo haber hallado pruebas de que personas y entidades en Chad, Puntlandia (Somalia), el sureste de Libia y Emiratos Árabes Unidos participaban en una red transnacional de apoyo a las FAR, sin vincular a ningún Estado vecino. La fuente no recoge respuesta de los aludidos.", "attributed_to": "ffm_sudan",
+         "evidence": [
+           {"source": "unnews_2026_10_28", "locator": "Párrs. 11–12 del cuerpo (declaraciones del presidente de la misión, Mohamed Chande Othman)"}
+         ]}
+      ],
+      "location": null,
+      "participations": [
+        {"actor": "fas", "role": "participant", "claim": "c1", "note": "Ataques atribuidos por la ONU."},
+        {"actor": "far", "role": "participant", "claim": "c1", "note": "Ataques atribuidos por la ONU."},
+        {"actor": "acnudh", "role": "other", "claim": "c1", "note": "Documentación."}
+      ]
+    }
+  ]
+}
