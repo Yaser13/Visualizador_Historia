@@ -25,3 +25,11 @@ El usuario eligió la expansión de Roma. H1 queda resuelta para el tema; el per
 ## Backend inicial — 2026-11-15
 
 Se creó `backend/` con Django 6.1.3 y el endpoint de lectura de Roma, con cinco hitos estáticos y en revisión; las coordenadas son nulas. `manage.py check` pasó y `manage.py test stories` pasó 3 pruebas. No existen modelos históricos ni integración frontend; H2, H3 y H4 siguen en curso. Los comandos de arranque están en `backend/README.md`.
+
+## Interfaz inicial — 2026-11-15
+
+La plantilla React se sustituyó por una cronología y un panel de detalle que consumen la API mediante el proxy de desarrollo Vite. Se muestran enlaces a fuentes y aviso de revisión; las ubicaciones no verificadas no se representan en un mapa. Se comprobó `npm run build`, `manage.py test stories` (3 pruebas) y una solicitud a la API a través del servidor Vite (5 hitos). No se realizó comprobación visual en navegador ni pruebas de accesibilidad completas. El globo 3D, la verificación de coordenadas, OpenAPI y pruebas integradas de interacción siguen pendientes.
+
+## Globo inicial — 2026-11-15
+
+Se añadió una esfera 3D interactiva en React, cargada de forma diferida con Three.js. El mapa base representa costas modernas simplificadas, no territorios históricos; no contiene marcadores ni conecta la selección temporal a ubicaciones todavía. Fuente: `world-atlas` 2.0.2, `land-110m.json`, derivado de Natural Earth 4.1.0, escala 1:110 millones; paquete distribuido bajo licencia ISC. Los derechos de los datos originales deben revisarse antes de una publicación externa. Hay controles por botones y un mensaje alternativo ante fallos de WebGL. La cronología sigue siendo la alternativa textual. Compilación Vite correcta; el módulo diferido supera el aviso de 500 kB (aprox. 609 kB, 160 kB gzip). `npm run lint` informó una advertencia sobre el estado de error de WebGL en el efecto; no hubo errores. Se verificó que el archivo TopoJSON contiene una colección con geometría MultiPolygon. No se ha comprobado visualmente ni en navegador real el renderizado, la interacción o el fallo de WebGL. Pendientes: comprobar esas interacciones y accesibilidad; verificar coordenadas históricas y enlazar selección y globo.
