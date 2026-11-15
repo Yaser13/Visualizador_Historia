@@ -1,4 +1,4 @@
-﻿"""Initial curated draft; coordinates remain unset pending geographical review."""
+﻿"""Initial curated draft with approximate modern reference locations."""
 
 CHRONOLOGY = {
     "title": "Italian Peninsula, 1000 B.C.–1 A.D.",
@@ -9,14 +9,26 @@ CHRONOLOGY = {
 }
 
 
+LOCATIONS = {
+    "Roma": ([12.4923, 41.8902], "Centro histórico de Roma, referencia moderna aproximada; no representa la extensión de Roma antigua.", "https://whc.unesco.org/en/list/91/maps/", "Historic Centre of Rome, propiedad 91quater-001"),
+    "Veyes": ([12.3896, 42.0236], "Referencia aproximada del yacimiento; no representa los límites de la ciudad antigua.", "https://www.mikoflohr.org/data/places/veii/", "Coordinates, Veii"),
+    "Cartago": ([10.3233, 36.8528], "Referencia aproximada al área arqueológica de las colinas; no representa la extensión de Cartago ni de la provincia.", "https://whc.unesco.org/en/list/37/maps/", "The area of the hills, propiedad 37-001"),
+}
+
+
 def event(identifier, order, title, description, start, end, precision, label, place, locator):
+    location = LOCATIONS.get(place)
+    place_data = {"label": place, "coordinates": None, "precision": "unknown", "note": "Este acontecimiento abarca una región y no se representa mediante un punto.", "coordinate_source": None}
+    if location:
+        coordinates, note, url, source_locator = location
+        place_data = {"label": place, "coordinates": coordinates, "precision": "approximate", "note": note, "coordinate_source": {"url": url, "locator": source_locator}}
     return {
         "id": identifier,
         "order": order,
         "title": title,
         "description": description,
         "date": {"start_year": start, "end_year": end, "precision": precision, "label": label},
-        "place": {"label": place, "coordinates": None, "precision": "unknown", "note": "Coordenadas pendientes de verificación; no representa fronteras."},
+        "place": place_data,
         "evidence_status": "under_review",
         "sources": [{**CHRONOLOGY, "locator": locator}],
     }
@@ -34,3 +46,4 @@ ROME = {
         event("augusto", 5, "El Principado de Augusto", "Se establece el Principado de Augusto, fecha convencional de inicio del periodo imperial.", -27, -27, "year", "27 a. e. c.", "Roma", "Overview; Key Events, 27 B.C.–14 A.D."),
     ],
 }
+

@@ -1,0 +1,115 @@
+/* Globe overlays (GEO-12). Base classes (globe-card, globe-stage, globe-location-label...) live in App.css. */
+
+.globe-location-label.globe-active-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: min(280px, 60%);
+  padding: 7px 11px 8px 8px;
+  border-color: #d7a964;
+  line-height: 1.3;
+  white-space: normal;
+  transform: translate(34px, -50%);
+}
+
+.globe-location-label.globe-active-label[data-side="left"] {
+  transform: translate(calc(-100% - 34px), -50%);
+}
+
+.globe-location-label.globe-active-label[data-side="below"] {
+  transform: translate(-50%, 36px);
+}
+
+.globe-location-label.globe-active-label span {
+  margin: 0;
+  color: inherit;
+}
+
+.globe-location-label.globe-active-label .globe-active-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #c2a46a;
+  border-radius: 50%;
+  background: #10191c;
+}
+
+.globe-location-label.globe-active-label .globe-active-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.globe-location-label.globe-active-label .globe-active-place {
+  color: #efd49b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.globe-location-label.globe-active-label .globe-active-title {
+  font: 400 13px/1.25 Georgia, serif;
+  color: #fff2db;
+  overflow-wrap: anywhere;
+}
+
+.globe-location-label.globe-active-label .globe-active-date {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d7a964;
+}
+
+.globe-tooltip {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 240px;
+  padding: 6px 9px 7px;
+  background: #10191cf2;
+  border: 1px solid #8e7950;
+  box-shadow: 0 4px 14px #0007;
+  color: #eee8d7;
+  font-size: 11px;
+  line-height: 1.35;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 26px));
+}
+
+.globe-tooltip[data-side="below"] {
+  transform: translate(-50%, 26px);
+}
+
+.globe-tooltip strong {
+  font: 400 12.5px/1.25 Georgia, serif;
+  color: #fff2db;
+}
+
+.globe-tooltip .globe-tooltip-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #d7a964;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+.globe-tooltip .globe-tooltip-more {
+  color: #b9c4b5;
+  font-size: 10px;
+}
+
+@media (max-width: 680px) {
+  .globe-location-label.globe-active-label {
+    max-width: min(240px, 80%);
+  }
+
+  .globe-location-label.globe-active-label .globe-active-title {
+    font-size: 12px;
+  }
+}

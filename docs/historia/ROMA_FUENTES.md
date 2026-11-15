@@ -21,3 +21,14 @@ Alcance acordado: expansión de Roma; para esta primera narración se propone el
 | 5 | 27 a. e. c. | Octaviano recibe el título de Augusto y comienza convencionalmente el Principado. | Lightfoot, The Julio-Claudian Dynasty; cronología del Met, Overview. | Roma es contexto político; verificar coordenadas y explicitar que no representa la extensión del imperio. |
 
 Las fechas reflejan la precisión de las fuentes consultadas, no certeza absoluta. El primer hito y el último ofrecen contexto político, no conquistas. Los puntos son referencias geográficas modernas aproximadas, no geometrías históricas. Falta contrastar los hitos con otras fuentes especializadas, comprobar coordenadas y revisar derechos de cualquier material que se pretenda reproducir. No se ha aprobado aún su publicación como contenido final.
+
+## Referencias geográficas modernas — 2026-11-15
+
+Coordenadas almacenadas como `[longitud, latitud]` y redondeadas a cuatro decimales; son puntos de referencia aproximados y no límites históricos. Las fuentes geográficas se presentan por separado de las fuentes de las afirmaciones históricas:
+
+- Roma: `[12.4923, 41.8902]`, centro histórico, [UNESCO, propiedad 91quater-001](https://whc.unesco.org/en/list/91/maps/); la fuente usa 41°53′24,8″ N, 12°29′32,3″ E. Punto de contexto para República y Principado.
+- Veyes: `[12.3896, 42.0236]`, [Miko Flohr, Veii, Coordinates](https://www.mikoflohr.org/data/places/veii/), fuente original en orden latitud, longitud. El punto no delimita la ciudad antigua.
+- Cartago: `[10.3233, 36.8528]`, [UNESCO, área de las colinas, propiedad 37-001](https://whc.unesco.org/en/list/37/maps/); la fuente usa 36°51′10″ N, 10°19′23,9″ E. No representa la extensión de la ciudad ni de la provincia.
+- Sicilia: sin punto; el acontecimiento afecta a una región, no a una localización puntual.
+
+Consulta: 2026-11-15. Las coordenadas proporcionan orientación, no validan por sí mismas las afirmaciones históricas, que permanecen en revisión.
