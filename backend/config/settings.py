@@ -10,22 +10,81 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+REPO_DIR = BASE_DIR.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
+def load_env_file(path):
+    """Minimal ``.env`` loader (no extra dependency).
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#nug9y4f!!og&z-^j)l!1+1uq^y7*@jm23htavgd6&(m91zb+4'
+    Accepts ``KEY=value`` lines, ``#`` comments, an optional ``export`` prefix and
+    single/double quotes. Variables already defined in the environment win.
+    """
+    try:
+        lines = Path(path).read_text(encoding='utf-8-sig').splitlines()
+    except (FileNotFoundError, NotADirectoryError):
+        return
+    for raw in lines:
+        line = raw.strip()
+        if not line or line.startswith('#'):
+            continue
+        if line.startswith('export '):
+            line = line[len('export '):].lstrip()
+        key, sep, value = line.partition('=')
+        key, value = key.strip(), value.strip()
+        if not sep or not key.replace('_', '').isalnum():
+            continue
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ('"', "'"):
+            value = value[1:-1]
+        elif ' #' in value:
+            value = value.split(' #', 1)[0].rstrip()
+        os.environ.setdefault(key, value)
+
+
+def env_bool(name, default):
+    value = os.environ.get(name)
+    if value is None or value.strip() == '':
+        return default
+    return value.strip().lower() in ('1', 'true', 'yes', 'on', 'si', 'sí')
+
+
+def env_int(name, default):
+    value = os.environ.get(name, '').strip()
+    if not value:
+        return default
+    try:
+        return int(value)
+    except ValueError as error:
+        raise ImproperlyConfigured(f'{name} debe ser un número entero.') from error
+
+
+def env_list(name):
+    return [item.strip() for item in os.environ.get(name, '').split(',') if item.strip()]
+
+
+# Optional local secrets file at the repository root (ignored by Git; see .env.example).
+load_env_file(REPO_DIR / '.env')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env_bool('DJANGO_DEBUG', True)
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
+if not SECRET_KEY:
+    if not DEBUG:
+        raise ImproperlyConfigured('Define DJANGO_SECRET_KEY cuando DJANGO_DEBUG es falso.')
+    # Insecure fallback for local development only.
+    SECRET_KEY = 'django-insecure-#nug9y4f!!og&z-^j)l!1+1uq^y7*@jm23htavgd6&(m91zb+4'
+
+ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS')
+CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS')
 
 
 # Application definition
@@ -37,7 +96,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'stories',
+    'ingestion',
 ]
 
 MIDDLEWARE = [
@@ -103,7 +164,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -127,3 +188,26 @@ MAILERS = {
     },
 }
 
+
+# Sessions and CSRF (contract: docs/api/CONTRATO_USUARIOS_INGESTA.md §2)
+# The SPA reads the ``csrftoken`` cookie and sends it as ``X-CSRFToken``.
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SECURE = env_bool('DJANGO_SECURE_COOKIES', not DEBUG)
+CSRF_COOKIE_SECURE = SESSION_COOKIE_SECURE
+CSRF_FAILURE_VIEW = 'accounts.views.csrf_failure'
+
+
+# News ingestion and agent pipeline (contract §3). All values come from the environment.
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
+# Reasoning model for extraction, verification and analysis; configurable.
+OPENAI_MODEL = os.environ.get('OPENAI_MODEL', '').strip() or 'gpt-5-mini'
+# Model compatible with the Responses API web search tool; configurable.
+OPENAI_SEARCH_MODEL = os.environ.get('OPENAI_SEARCH_MODEL', '').strip() or 'gpt-5-mini'
+INGESTION_MAX_RELATED = env_int('INGESTION_MAX_RELATED', 5)
+INGESTION_DAILY_LIMIT = env_int('INGESTION_DAILY_LIMIT', 10)
+INGESTION_AUTO_PUBLISH = env_bool('INGESTION_AUTO_PUBLISH', False)
+INGESTION_USER_AGENT = os.environ.get('INGESTION_USER_AGENT', '').strip() or 'GeoObservatorio/0.1 (+local-dev)'
+NOMINATIM_URL = os.environ.get('NOMINATIM_URL', '').strip() or 'https://nominatim.openstreetmap.org/search'

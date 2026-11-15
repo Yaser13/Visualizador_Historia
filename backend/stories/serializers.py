@@ -1,6 +1,8 @@
 ﻿"""Read-only presentation of reviewed, source-linked database records."""
 from django.db.models import Count, F, Max, Min, Prefetch, Q
 
+from accounts.models import public_display_name
+
 from .models import Claim, Event, Evidence, TimelineStory
 
 NEWS_SLUG = 'geopolitica'
@@ -34,10 +36,17 @@ def date_label(event):
     return f'Aproximadamente {label}' if event.date_precision == 'approximate' else label
 
 
-def event_queryset():
-    return (Event.objects.filter(status__in=[Event.Status.REVIEWED, Event.Status.PUBLISHED])
+def event_relations(queryset=None):
+    """Events with everything ``event_data`` reads, regardless of status (used for private previews)."""
+    queryset = Event.objects.all() if queryset is None else queryset
+    return (queryset.select_related('submitted_by__profile')
             .prefetch_related(Prefetch('claims', queryset=Claim.objects.filter(status=Claim.Status.SUPPORTED).select_related('attributed_to').prefetch_related('evidence__source').order_by('id')),
                               'locations__source', 'participations__actor', 'effects__affected_actor', 'effects__perspective'))
+
+
+def event_queryset():
+    """Publicly visible events: reviewed or published only."""
+    return event_relations(Event.objects.filter(status__in=[Event.Status.REVIEWED, Event.Status.PUBLISHED]))
 
 
 def event_data(event, identifier, order):
@@ -80,6 +89,7 @@ def event_data(event, identifier, order):
                         'attributed_to': item.attributed_to.name if item.attributed_to else None,
                         'sources': [source_data(evidence) for evidence in item.evidence.all()]} for item in claims],
             'actors': participants, 'effects': effects,
+            'origin': event.origin, 'submitted_by': public_display_name(event.submitted_by),
     }
 
 
@@ -98,7 +108,7 @@ def story_from_database():
         return None
     first, last = event_date_bounds([data])
     return {'slug': event.slug, 'title': event.title, 'summary': event.summary,
-            'kind': TimelineStory.Kind.DIPLOMACY, 'as_of': data['as_of'],
+            'kind': TimelineStory.Kind.DIPLOMACY, 'origin': event.origin, 'as_of': data['as_of'],
             'first_event_date': first, 'last_event_date': last, 'events': [data]}
 
 
@@ -119,7 +129,7 @@ def timeline_from_database(slug):
         return None
     first, last = event_date_bounds(events)
     return {'slug': story.slug, 'title': story.title, 'summary': story.summary, 'kind': story.kind,
-            'as_of': story.as_of.isoformat() if story.as_of else None,
+            'origin': story.origin, 'as_of': story.as_of.isoformat() if story.as_of else None,
             'first_event_date': first, 'last_event_date': last, 'events': events}
 
 
@@ -139,14 +149,14 @@ def story_list():
                          last_event=Max('entries__event__start_date', filter=in_visible))
                .filter(events_count__gt=0))
     items = [{'slug': story.slug, 'title': story.title, 'summary': story.summary, 'kind': story.kind,
-              'events_count': story.events_count,
+              'origin': story.origin, 'events_count': story.events_count,
               'first_event_date': story.first_event.isoformat() if story.first_event else None,
               'last_event_date': story.last_event.isoformat() if story.last_event else None,
               'as_of': story.as_of.isoformat() if story.as_of else None} for story in stories]
     news = story_from_database()
     if news is not None:
         items.append({'slug': news['slug'], 'title': news['title'], 'summary': news['summary'], 'kind': news['kind'],
-                      'events_count': len(news['events']), 'first_event_date': news['first_event_date'],
+                      'origin': news['origin'], 'events_count': len(news['events']), 'first_event_date': news['first_event_date'],
                       'last_event_date': news['last_event_date'], 'as_of': news['as_of']})
     items.sort(key=lambda item: item['slug'])
     items.sort(key=lambda item: item['last_event_date'] or '', reverse=True)

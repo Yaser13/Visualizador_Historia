@@ -15,3 +15,13 @@
 .icon-legend{margin-top:14px;padding-top:12px;border-top:1px solid #4e5a52}.icon-legend ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;padding:0;margin:0 0 8px;font-size:11px;color:#dfe3d3}.icon-legend li{display:inline-flex;align-items:center;gap:6px}.icon-legend li svg{flex:none}.icon-legend .timeline-legend+.timeline-legend{margin-top:4px}
 @media(max-width:680px){.timeline-heading{flex-wrap:wrap}.timeline-toolbar{flex-direction:column;align-items:stretch}.playback .play-button{flex:1;min-height:44px}.step-button{min-height:44px;width:44px}.display-mode legend{float:none;width:100%;margin-bottom:2px}.display-mode label{min-height:40px}.story-selector button{min-width:0}.story-selector .selector-retry{flex:none;margin:8px 0 0;display:flex}}
 @media(prefers-reduced-motion:reduce){.track-fill,.track-node{transition:none}}
+
+/* QA GEO-14 D1: fixed stage height on wide screens; the card scrolls inside so the active icon and the globe controls stay above the fold. */
+.visual-stage{height:clamp(460px,calc(100vh - 230px),760px);min-height:0}
+.event-card{max-height:calc(100% - 44px);overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#8e7950 #172927}
+/* QA GEO-14 D2: on narrow screens each story button takes the full row (no horizontal overflow). */
+@media(max-width:680px){.visual-stage{height:auto;min-height:0}
+.event-card{max-height:none;overflow:visible}
+.story-selector button{flex:1 1 100%}
+.selector-title{min-width:0;overflow-wrap:anywhere}
+}

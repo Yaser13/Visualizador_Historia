@@ -68,3 +68,26 @@ Se creó una instantánea sobre la apertura de COP31 en Antalya, respaldada por 
 Se añadieron modelos relacionales y administración para acontecimientos, fuentes, afirmaciones, evidencia, actores, participaciones, efectos y ubicaciones. El comando `seed_cop31` carga una instantánea con procedencia sin sobrescribir registros existentes; la API geopolítica lee afirmaciones sustentadas desde la base. Se aplicaron migraciones localmente y se cargaron 1 acontecimiento, 8 afirmaciones, 4 fuentes, 5 actores, 3 participaciones, 1 ubicación y 0 efectos; la API local respondió 200. En pruebas SQLite temporales pasan las comprobaciones de modelos, API, evidencia y carga repetida; el frontend compila. La entrada de noticias por usuario, búsqueda externa, extracción, revisión editorial y actualización automática siguen pendientes; el ORM directo puede eludir `full_clean`, por lo que aún falta un servicio de publicación que garantice integridad entre tablas.
 
 La interfaz ahora muestra actores y papeles, afirmaciones con su fuente y efectos cuando existan. Para la COP31 no se registraron efectos ni valoraciones por falta de evidencia individualizada; las declaraciones y análisis se presentan separados. Tras el ajuste de la siembra, si ya existe el acontecimiento el comando no modifica ni repara sus registros.
+
+## Conflicto armado con iconos y cronología actualizable — 2026-11-15
+
+A petición del usuario se añadió la noticia «Guerra en Sudán» (10 hitos, 2023-04-15 a 2026-10-21, 32 fuentes) como cronología actualizable, y el globo muestra todos los hitos como iconos de categoría. Contrato: `docs/api/CONTRATO_CRONOLOGIAS.md`; iconos: `frontend/src/categories.ts` e `icons.tsx`; fuentes: `docs/geopolitica/SUDAN_FUENTES.md`.
+
+| ID | Responsable | Estado | Evidencia |
+|---|---|---|---|
+| GEO-10 | geopolitical_research | terminada | JSON y documento de fuentes; `load_timeline --dry-run` correcto; revisión del orquestador: hechos/declaraciones atribuidos, sin cifras sin localizador. Huecos registrados (Kordofán 2026, AP/Reuters no legibles directamente). |
+| GEO-11 | django_backend / django_developer | terminada | `load_timeline` incremental, `GET /api/stories/`, migración 0004; `manage.py test stories`: 37 OK (verificado por el orquestador). Carga real: 10 hitos; recarga: 0 creados. |
+| GEO-12 | globe_3d | terminada | Iconos sprite por categoría, agrupación, oclusión, estados activo/pasado/futuro, clic para seleccionar, `prefers-reduced-motion`; sin líneas ni áreas. |
+| GEO-13 | react_architect / react_frontend | terminada | Selector dinámico, barra temporal proporcional, reproducción, teclado, leyenda; build y lint correctos. |
+| GEO-14 | qa_testing | en curso | Verificación integrada en navegador headless. |
+
+## Misión: usuarios y noticias enviadas con análisis por agentes — 2026-11-15
+
+El usuario solicita inicio de sesión con información personal, envío de enlaces de noticias por los usuarios y un grupo de agentes con la API de OpenAI que recoja información relacionada, la analice y la almacene con referencias, sin inventar contenido. Contrato: `docs/api/CONTRATO_USUARIOS_INGESTA.md`. Decisiones del orquestador: cita literal verificada de forma determinista para toda afirmación; análisis de IA etiquetado y atribuido; borrador con revisión de staff antes de publicar; cola en base de datos con trabajador `process_submissions`; coordenadas solo de Nominatim/OSM con atribución; secretos por entorno. No hay `OPENAI_API_KEY` en el entorno: las pruebas usan cliente simulado.
+
+| ID | Prioridad | Responsable | Depende de | Estado | Aceptación |
+|---|---|---|---|---|---|
+| USR-01 | P0 | django_backend / django_developer | contrato | en curso | Perfiles, autenticación por sesión con CSRF, modelos de ingesta, API de envíos y revisión, origen en `stories`; pruebas de permisos y aislamiento. |
+| ING-01 | P0 | django_developer / data_engineer | contrato; modelos USR-01 | en curso | Descarga con SSRF, búsqueda relacionada, agentes extractor/verificador/geolocalizador/analista, verificación determinista de citas, persistencia en borrador; pruebas sin red. |
+| USR-02 | P0 | react_architect / react_frontend | contrato | en curso | Sesión, perfil, enviar noticia, mis envíos con estado por pasos, revisión staff, insignia de IA; accesible y responsive. |
+| USR-03 | P0 | qa_testing | USR-01, ING-01, USR-02 | pendiente | Flujo integrado de registro → envío → proceso simulado → revisión → publicación en el globo; seguridad (CSRF, aislamiento, SSRF) y regresión. |

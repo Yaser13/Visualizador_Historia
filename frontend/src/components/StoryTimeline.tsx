@@ -1,6 +1,7 @@
 import { useId, useRef } from 'react'
 import type { KeyboardEvent } from 'react'
-import { CategoryIcon, categoryMeta } from '../icons'
+import { CategoryIcon } from '../icons'
+import { categoryMeta } from '../categories'
 import { formatDate, positionInRange, timelineRange } from './storyTypes'
 import type { EventState, Story } from './storyTypes'
 

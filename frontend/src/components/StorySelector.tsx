@@ -27,6 +27,7 @@ export default function StorySelector({ list, stories, selectedSlug, onSelect, o
           <button type="button" key={item.slug} aria-pressed={selectedSlug === item.slug} onClick={() => onSelect(item.slug)}>
             <CategoryIcon category={kindCategory(item.kind)} size={16} />
             <span className="selector-title">{item.title}</span>
+            {item.origin === 'ai_pipeline' && <span className="selector-ai"><span aria-hidden="true">IA</span><span className="sr-only"> · observación generada con IA a partir de fuentes enviadas por usuarios</span></span>}
             {count !== null && <span className="selector-count">{count} {count === 1 ? 'hito' : 'hitos'}</span>}
           </button>
         )

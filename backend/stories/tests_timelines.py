@@ -237,7 +237,7 @@ class TimelineApiTests(TimelineFileMixin, TestCase):
         self.assertEqual([item['slug'] for item in stories], ['conflicto-armado', 'geopolitica', 'cronologia-prueba'])
         by_slug = {item['slug']: item for item in stories}
         self.assertEqual(by_slug['cronologia-prueba'], {
-            'slug': 'cronologia-prueba', 'title': 'Cronología sintética', 'summary': 'Datos sintéticos de prueba.', 'kind': 'conflict',
+            'slug': 'cronologia-prueba', 'title': 'Cronología sintética', 'summary': 'Datos sintéticos de prueba.', 'kind': 'conflict', 'origin': 'editorial',
             'events_count': 2, 'first_event_date': '2024-01-05', 'last_event_date': '2024-06-10', 'as_of': '2026-11-15'})
         self.assertEqual(by_slug['geopolitica']['kind'], 'diplomacy')
         self.assertEqual(by_slug['geopolitica']['events_count'], 1)

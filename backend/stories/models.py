@@ -1,4 +1,5 @@
-﻿from django.core.exceptions import ValidationError
+﻿from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import F, Q
@@ -6,7 +7,15 @@ from django.db.models import F, Q
 from .categories import EVENT_CATEGORIES, is_valid_category
 
 
+class Origin(models.TextChoices):
+    """Who produced a record: the editorial team or the AI ingestion pipeline."""
+    EDITORIAL = 'editorial', 'Editorial'
+    AI_PIPELINE = 'ai_pipeline', 'Flujo de agentes de IA'
+
+
 class Event(models.Model):
+    Origin = Origin
+
     class Status(models.TextChoices):
         DRAFT = 'draft', 'Borrador'
         REVIEWED = 'reviewed', 'Revisado'
@@ -27,6 +36,8 @@ class Event(models.Model):
     end_date = models.DateField(null=True, blank=True)
     date_precision = models.CharField(max_length=12, choices=Precision.choices, default=Precision.UNKNOWN)
     as_of = models.DateField(null=True, blank=True)
+    origin = models.CharField(max_length=12, choices=Origin.choices, default=Origin.EDITORIAL)
+    submitted_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='submitted_events')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -202,6 +213,8 @@ class Location(models.Model):
 
 class TimelineStory(models.Model):
     """Editorial grouping of independently sourced and dated events."""
+    Origin = Origin
+
     class Kind(models.TextChoices):
         CONFLICT = 'conflict', 'Conflicto'
         DIPLOMACY = 'diplomacy', 'Diplomacia'
@@ -212,6 +225,8 @@ class TimelineStory(models.Model):
     summary = models.TextField()
     kind = models.CharField(max_length=12, choices=Kind.choices, default=Kind.OTHER)
     as_of = models.DateField(null=True, blank=True, help_text='Fecha de la última verificación editorial de la cronología.')
+    origin = models.CharField(max_length=12, choices=Origin.choices, default=Origin.EDITORIAL)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='created_timeline_stories')
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):

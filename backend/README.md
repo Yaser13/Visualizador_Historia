@@ -46,7 +46,58 @@ Para comprobar el backend:
 
 ```powershell
 python backend\manage.py check
-python backend\manage.py test stories
+python backend\manage.py test
+```
+
+## Usuarios, envío de noticias y revisión
+
+Contrato: `docs/api/CONTRATO_USUARIOS_INGESTA.md`. Apps: `accounts` (perfil `Profile` y API de sesión) e `ingestion` (modelos `NewsSubmission`, `FetchedDocument`, `AgentRun`, API de envíos y transiciones en `ingestion/services.py`). El flujo de agentes (`ingestion/pipeline/`, comando `process_submissions`) es un componente aparte.
+
+### Variables de entorno y `.env`
+
+`config/settings.py` lee el entorno y, si existe, el archivo `.env` de la raíz del repositorio (parser mínimo propio, sin dependencias; las variables ya definidas en el entorno tienen prioridad). Copia la plantilla y rellénala; `.env` y `.env.*` están en `.gitignore` (salvo `.env.example`):
+
+```powershell
+Copy-Item .env.example .env
+```
+
+| Variable | Por defecto | Uso |
+|---|---|---|
+| `DJANGO_SECRET_KEY` | clave insegura solo si `DEBUG` | Obligatoria con `DJANGO_DEBUG=false` (si falta, Django no arranca). |
+| `DJANGO_DEBUG` | `true` | Modo de desarrollo. |
+| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | vacías | Listas separadas por comas. |
+| `DJANGO_SECURE_COOKIES` | `not DEBUG` | Cookies de sesión y CSRF solo por HTTPS. |
+| `OPENAI_API_KEY` | vacía | Sin clave, los envíos fallan con un mensaje claro. |
+| `OPENAI_MODEL`, `OPENAI_SEARCH_MODEL` | `gpt-5-mini` | Modelos configurables (razonamiento y búsqueda web); comprueba su disponibilidad en tu cuenta. |
+| `INGESTION_MAX_RELATED` | `5` | Máximo de fuentes relacionadas por envío. |
+| `INGESTION_DAILY_LIMIT` | `10` | Envíos por usuario y día natural (zona `TIME_ZONE`); al superarlo, 429. |
+| `INGESTION_AUTO_PUBLISH` | `false` | Publicación sin revisión humana (desaconsejado). |
+| `INGESTION_USER_AGENT` | `GeoObservatorio/0.1 (+local-dev)` | User-Agent genérico de las descargas. |
+| `NOMINATIM_URL` | `https://nominatim.openstreetmap.org/search` | Geocodificador. |
+
+### Crear un administrador o un revisor (staff)
+
+```powershell
+python backend\manage.py migrate
+python backend\manage.py createsuperuser
+```
+
+El superusuario entra en `http://127.0.0.1:8000/admin/` y en la API. Para que otra cuenta revise envíos sin ser superusuario, en el admin abre *Usuarios*, marca «Es staff» y guarda (o desde la shell: `User.objects.filter(username="...").update(is_staff=True)`). Los usuarios creados antes de esta app reciben un `Profile` automáticamente la primera vez que se leen sus datos; su nombre público por defecto es «Usuario <id>» (nunca el nombre de usuario ni el correo) y se cambia en *Perfiles* o con `PATCH /api/profile/`.
+
+En el admin, *Envíos de noticias* se filtra por estado; las acciones «Publicar» y «Rechazar» usan las mismas funciones de servicio que la API (solo actúan sobre envíos en `review`). Para rechazar desde la lista, escribe antes el motivo en el campo «Review note» del envío.
+
+### API de sesión (resumen)
+
+Sesión de Django + CSRF: el cliente pide `GET /api/auth/csrf/`, guarda el token (cookie `csrftoken`, legible por JavaScript) y lo envía en la cabecera `X-CSRFToken` en cada POST/PATCH. Tras iniciar sesión Django rota el token: vuelve a leer la cookie. La cookie de sesión es `HttpOnly` y ambas usan `SameSite=Lax`.
+
+- `/api/auth/register/`, `login/`, `logout/`, `me/`, `password/` y `/api/profile/` (GET/PATCH).
+- `/api/submissions/` (GET lista propia, `?all=1` para staff, `?status=` opcional; POST crear), `/api/submissions/<id>/` (detalle con `documents`, `agent_runs`, `preview`), `retry/`, `publish/` y `reject/`.
+- Errores: `{"detail": "..."}`; validación: `400 {"errors": {"campo": ["mensaje"]}}`; 401 sin sesión, 403 sin permiso, 404 si el envío no existe o es de otra persona, 429 por límite diario.
+
+Pruebas:
+
+```powershell
+python backend\manage.py test accounts ingestion stories
 ```
 
 ## Frontend local

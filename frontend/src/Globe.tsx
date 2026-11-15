@@ -4,7 +4,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { feature } from 'topojson-client'
 import type { Topology, GeometryCollection } from 'topojson-specification'
 import landData from 'world-atlas/land-110m.json'
-import { CategoryIcon, categoryMeta } from './icons'
+import { CategoryIcon } from './icons'
+import { categoryMeta } from './categories'
 import './Globe.css'
 
 // Contract: docs/api/CONTRATO_CRONOLOGIAS.md §4. Coordinates are [longitude, latitude].
@@ -22,7 +23,7 @@ type GlobeProps = { markers: GlobeMarker[]; activeId: string | null; onSelect?: 
 type MarkerState = GlobeMarker['state']
 type LandTopology = Topology<{ land: GeometryCollection }>
 
-// Markers closer than this (in degrees of arc) share one icon with a counter badge.
+// A group of markers at the same point (see SAME_POINT_DEGREES), drawn as one icon.
 type Cluster = { key: string; coordinates: [number, number]; members: GlobeMarker[]; target: GlobeMarker; state: MarkerState }
 type HoverInfo = { key: string; category: string; title: string; dateLabel: string; label: string; count: number }
 type Entry = { cluster: Cluster; sprite: THREE.Sprite; material: THREE.SpriteMaterial; visibility: number }
@@ -45,7 +46,8 @@ type EngineOptions = {
 
 const RADIUS = 1.3
 const MARKER_RADIUS = RADIUS * 1.012
-const CLUSTER_DEGREES = 0.3
+// Markers whose coordinates match within this tolerance (degrees, per axis) share one icon with a counter badge.
+const SAME_POINT_DEGREES = 1e-4
 // On-screen size of each icon quad in CSS pixels (constant at every zoom level).
 const ICON_PX: Record<MarkerState, number> = { active: 54, past: 36, future: 26 }
 const ICON_OPACITY: Record<MarkerState, number> = { active: 1, past: 0.85, future: 0.3 }
@@ -72,28 +74,29 @@ const memberState = (marker: GlobeMarker, activeId: string | null): MarkerState 
   return marker.state === 'future' ? 'future' : 'past'
 }
 
-const arcDegrees = ([lon1, lat1]: [number, number], [lon2, lat2]: [number, number]) => {
-  const toRad = THREE.MathUtils.degToRad
-  const dLat = toRad(lat2 - lat1)
-  const dLon = toRad(lon2 - lon1)
-  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2
-  return THREE.MathUtils.radToDeg(2 * Math.asin(Math.min(1, Math.sqrt(a))))
+// Same point only (contract §4: identical coordinates). Nearby but distinct places (e.g. Jartum and
+// Jartum Norte/Bahri) must stay separate icons, each drawn at its own coordinates.
+const samePoint = ([lon1, lat1]: [number, number], [lon2, lat2]: [number, number]) => {
+  const dLon = Math.abs(lon1 - lon2)
+  return Math.abs(lat1 - lat2) <= SAME_POINT_DEGREES && Math.min(dLon, 360 - dLon) <= SAME_POINT_DEGREES
 }
 
 function clusterMarkers(markers: GlobeMarker[], activeId: string | null): Cluster[] {
   const groups: { coordinates: [number, number]; members: GlobeMarker[] }[] = []
   for (const marker of markers) {
     if (!isValidCoordinates(marker.coordinates)) continue
-    const group = groups.find((candidate) => arcDegrees(candidate.coordinates, marker.coordinates) < CLUSTER_DEGREES)
+    const group = groups.find((candidate) => samePoint(candidate.coordinates, marker.coordinates))
     if (group) group.members.push(marker)
     else groups.push({ coordinates: [marker.coordinates[0], marker.coordinates[1]], members: [marker] })
   }
-  return groups.map(({ coordinates, members }) => {
+  return groups.map(({ members }) => {
     const states = members.map((marker) => memberState(marker, activeId))
     const activeIndex = states.indexOf('active')
     // Click target: the active member, otherwise the most recent one (last in the array).
     const target = activeIndex >= 0 ? members[activeIndex] : members[members.length - 1]
+    // Visual state = most relevant member (active > past > future); all-future groups stay dimmed.
     const state: MarkerState = activeIndex >= 0 ? 'active' : states.includes('past') ? 'past' : 'future'
+    const coordinates: [number, number] = [target.coordinates[0], target.coordinates[1]]
     return { key: members.map((marker) => marker.id).join('|'), coordinates, members, target, state }
   })
 }

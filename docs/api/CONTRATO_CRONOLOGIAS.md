@@ -77,7 +77,7 @@ Eventos ordenados por `start_date` ascendente. Se mantienen `expansion-de-roma`,
 
 ## 3. Categorías e iconos
 
-Fuente única en el frontend: `frontend/src/icons.tsx` (`CATEGORIES`, `categoryMeta`, `CategoryIcon`). El backend valida contra la misma lista:
+Fuente única en el frontend: `frontend/src/categories.ts` (`CATEGORIES`, `categoryMeta`) y el componente `CategoryIcon` en `frontend/src/icons.tsx`. El backend valida contra la misma lista:
 
 `conflicto, ataque, humanitario, desplazamiento, negociacion, acuerdo, politica, vencimiento, clima`
 

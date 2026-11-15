@@ -7,9 +7,10 @@ admin.site.register([Actor, Claim, Effect, Evidence, Location, Participation, So
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'category', 'status', 'start_date', 'date_precision', 'as_of')
-    list_filter = ('status', 'category', 'date_precision')
+    list_display = ('slug', 'title', 'category', 'status', 'origin', 'start_date', 'date_precision', 'as_of')
+    list_filter = ('status', 'origin', 'category', 'date_precision')
     search_fields = ('slug', 'title')
+    raw_id_fields = ('submitted_by',)
     ordering = ('-start_date',)
 
 
@@ -23,8 +24,9 @@ class TimelineEntryInline(admin.TabularInline):
 
 @admin.register(TimelineStory)
 class TimelineStoryAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'kind', 'as_of', 'entries_count', 'updated_at')
-    list_filter = ('kind',)
+    list_display = ('slug', 'title', 'kind', 'origin', 'as_of', 'entries_count', 'updated_at')
+    list_filter = ('kind', 'origin')
+    raw_id_fields = ('created_by',)
     search_fields = ('slug', 'title')
     readonly_fields = ('updated_at',)
     inlines = (TimelineEntryInline,)

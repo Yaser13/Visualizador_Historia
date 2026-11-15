@@ -3,7 +3,19 @@
 // legacy stories (`expansion-de-roma`, `geopolitica`) keep working.
 import type { GlobeMarker } from '../Globe'
 
-export type Source = { title: string; creator: string; publication: string; url: string; locator: string; rights_note: string }
+export type Source = {
+  title: string
+  creator: string
+  publication: string
+  url: string
+  locator: string
+  rights_note: string
+  published_at?: string | null
+  /** Literal quote from the stored document (contract CONTRATO_USUARIOS_INGESTA.md §0), when provided. */
+  excerpt?: string
+}
+/** `editorial` (default) or `ai_pipeline` (observation generated from a user submission). */
+export type Origin = 'editorial' | 'ai_pipeline' | (string & {})
 export type Claim = { id: number; text: string; kind: string; status: string; attributed_to: string | null; sources: Source[] }
 export type Actor = { name: string; kind: string; role: string; note: string; claim_id?: number }
 export type Effect = { description: string; affected_actor: string | null; perspective: string | null; valence: string; claim_id?: number }
@@ -33,6 +45,9 @@ export type StoryEvent = {
   claims?: Claim[]
   actors?: Actor[]
   effects?: Effect[]
+  origin?: Origin
+  /** Display name of the submitter (contract §1); never email or username. */
+  submitted_by?: string | { display_name?: string } | null
 }
 export type Story = {
   slug?: string
@@ -42,6 +57,7 @@ export type Story = {
   as_of?: string | null
   first_event_date?: string | null
   last_event_date?: string | null
+  origin?: Origin
   events: StoryEvent[]
 }
 /** Item of `GET /api/stories/`. */
@@ -54,6 +70,7 @@ export type StorySummary = {
   first_event_date?: string | null
   last_event_date?: string | null
   as_of?: string | null
+  origin?: Origin
 }
 
 /** Used only when `GET /api/stories/` fails or is empty; titles are UI labels, not data. */
